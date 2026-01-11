@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Class Schedule</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-blue:#0d6efd;      /* banner blue */
+      --brand-blue-dark:#0a5bd4; /* hover/darker */
+      --card-bg:#ffffff;
+      --page-bg:#f2f4f7;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --table-head:#4b5563;
+      --line:#e5e7eb;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--page-bg);
+      color:var(--text);
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+
+    .page{
+      max-width:980px;
+      margin:28px auto 60px;
+      padding:0 16px;
+    }
+
+    .hello{
+      font-size:28px;
+      font-weight:700;
+      margin:0 0 16px;
+    }
+
+    /* Section header bar (blue) */
+    .section{
+      margin-top:16px;
+    }
+    .section > .bar{
+      background:var(--brand-blue);
+      color:#fff;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:6px 6px 0 0;
+      box-shadow:0 2px 0 rgba(0,0,0,.06) inset;
+    }
+
+    /* Card container under a blue bar */
+    .card{
+      background:var(--card-bg);
+      border-radius:0 0 10px 10px;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      padding:18px;
+      border:1px solid #e8ecf2;
+    }
+
+    /* Basic info grid */
+    .info-grid{
+      display:grid;
+      grid-template-columns: 180px 1fr;
+      gap:12px 18px;
+      align-items:center;
+    }
+    .label{ color:var(--muted); }
+    .value{ font-weight:600; }
+
+    /* Schedule header row inside card */
+    .subbox{
+      border:1px solid var(--line);
+      border-radius:8px;
+      overflow:hidden;
+    }
+    .subbox-head{
+      background:#f8fafc;
+      padding:10px 14px;
+      font-weight:600;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .pill{
+      background:#eef2ff;
+      color:#3730a3;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    /* Table */
+    .table-responsive{
+      overflow:auto; /* allow horizontal scroll on tiny screens */
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:760px; /* keep columns readable on small screens */
+    }
+    thead th{
+      text-align:left;
+      padding:12px 10px;
+      background:#f3f4f6;
+      color:var(--table-head);
+      font-weight:600;
+      border-bottom:1px solid var(--line);
+      font-size:14px;
+    }
+    tbody td{
+      padding:14px 10px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+    }
+    tbody tr:nth-child(even){ background:#fafafa; }
+    tbody tr:hover{ background:#f1f5ff; }
+
+    /* Column widths (match screenshot feel) */
+    .col-code{ width:110px; }
+    .col-block{ width:110px; }
+    .col-subject{ width:auto; }
+    .col-time{ width:160px; }
+    .col-days{ width:80px; text-align:center; }
+    .col-room{ width:90px; }
+
+    /* Room tag */
+    .room{
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:6px;
+      background:#eef2ff;
+      color:#111827;
+      font-weight:600;
+      font-size:12px;
+      border:1px solid #e5e7eb;
+    }
+
+    /* Small screens */
+    @media (max-width:640px){
+      .info-grid{ grid-template-columns: 1fr; }
+      .label{ font-size:13px; }
+      .value{ font-size:14px; }
+      .hello{ font-size:22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1 class="hello">Hello Mr. ILEJAY!</h1>
+
+    <!-- Basic Student Information -->
+    <section class="section">
+      <div class="bar">Basic Student information</div>
+      <div class="card">
+        <div class="info-grid">
+          <div class="label">Student No.</div>
+          <div class="value">2024-107977</div>
+
+          <div class="label">Name</div>
+          <div class="value">ILEJAY, RAYMOND DEXTER TOLEDO</div>
+
+          <div class="label">Gender</div>
+          <div class="value">Male</div>
+
+          <div class="label">Latest Enrollment</div>
+          <div class="value">1st Semester of SY 2025-2026</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Class Schedule -->
+    <section class="section">
+      <div class="bar">Class Schedule</div>
+      <div class="card">
+        <div class="subbox">
+          <div class="subbox-head">
+            <span>Class Schedule for:</span>
+            <span class="pill">SY 2025, 1st Semester</span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-code">CLASS CODE</th>
+                  <th class="col-block">BLOCK</th>
+                  <th class="col-subject">SUBJECT</th>
+                  <th class="col-time">TIME</th>
+                  <th class="col-days">DAYS</th>
+                  <th class="col-room">ROOM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>133044</td>
+                  <td>CED-08-301P</td>
+                  <td>PROFED2 - Educational Technology 1</td>
+                  <td>15:30:00 – 17:00:00</td>
+                  <td class="col-days">Monday</td>
+                  <td><span class="room">OB-323</span></td>
+                </tr>
+
+                <tr>
+                  <td>133044</td>
+                  <td>CED-08-301P</td>
+                  <td>PROFED2 - Educational Technology 1</td>
+                  <td>17:30:00 – 19:00:00</td>
+                  <td class="col-days">Thursday</td>
+                  <td><span class="room">OB-323</span></td>
+                </tr>
+                
+                <tr>
+                  <td>133045</td>
+                  <td>CED-08-301P</td>
+                  <td>SS115 - Production of Social Studies Instructional Materials</td>
+                  <td>07:30:00 – 09:00:00</td>
+                  <td class="col-days">Tuesday   Friday</td>
+                  <td><span class="room">OB-315</span></td>
+                </tr>
+
+                <tr>
+                  <td>133041</td>
+                  <td>CED-08-301P</td>
+                  <td>SS109 - Geography and Natural Resources of the Philippines</td>
+                  <td>08:00:00 – 09:30:00</td>
+                  <td class="col-days">Monday   Thursday</td>
+                  <td><span class="room">OB-323</span></td>
+                </tr>
+
+                <tr>
+                  <td>133042</td>
+                  <td>CED-08-301P</td>
+                  <td>SS110 - Introductory Micro Economics</td>
+                  <td>09:30:00 – 11:00:00</td>
+                  <td class="col-days">Monday   Thursday</td>
+                  <td><span class="room">OB-323</span></td>
+                </tr>
+
+                <tr>
+                  <td>133043</td>
+                  <td>CED-08-301P</td>
+                  <td>GE-ELEC2 - Pagbasa ng mga Dalumat sa Filipino Tungo sa Pananaliksik</td>
+                  <td>17:30:00 – 19:00:00</td>
+                  <td class="col-days">Monday</td>
+                  <td><span class="room">OB-323</span></td>
+                </tr>
+
+                <tr>
+                  <td>133043</td>
+                  <td>CED-08-301P</td>
+                  <td>GE-ELEC2 - Pagbasa ng mga Dalumat sa Filipino Tungo sa Pananaliksik</td>
+                  <td>15:30:00 – 17:00:00</td>
+                  <td class="col-days">Thursday</td>
+                  <td><span class="room">OB-323</span></td>
+                </tr>
+
+                <tr>
+                  <td>133046</td>
+                  <td>CED-08-301P</td>
+                  <td>PROFED5 - Guidance and Counseling</td>
+                  <td>15:00:00 – 16:30:00</td>
+                  <td class="col-days">Tuesday   Friday</td>
+                  <td><span class="room">OB-315</span></td>
+                </tr>
+
+                <tr>
+                  <td>133047</td>
+                  <td>CED-08-301P</td>
+                  <td>GE-ELEC14 - Technical Communication</td>
+                  <td>10:00:00 – 11:30:00</td>
+                  <td class="col-days">Tuesday   Friday</td>
+                  <td><span class="room">OB-315</span></td>
+                </tr>
+
+                <tr>
+                  <td>133048</td>
+                  <td>CED-08-301P</td>
+                  <td>SS107 - World History I: From Ancient to Pre-Colonial American Civilization</td>
+                  <td>16:30:00 – 18:00:00</td>
+                  <td class="col-days">Tuesday   Friday</td>
+                  <td><span class="room">OB-315</span></td>
+                </tr>
+
+                <tr>
+                  <td>133049</td>
+                  <td>CED-08-301P</td>
+                  <td>GE09 - Life and Works of Rizal</td>
+                  <td>15:00:00 – 17:00:00</td>
+                  <td class="col-days">Wednesday</td>
+                  <td><span class="room">OB-315</span></td>
+                </tr>
+
+                <tr>
+                  <td>13200032</td>
+                  <td>CED-GPE-304P</td>
+                  <td>PEO3 - Physical Activities Towards Health and Fitness I</td>
+                  <td>18:00:00 – 21:00:00</td>
+                  <td class="col-days">Wednesday</td>
+                  <td><span class="room">—</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
